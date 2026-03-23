@@ -206,7 +206,6 @@ void decode2() {
     }
 
     char matrix[8][8];
-    // Обнуляємо матрицю (Visual Studio це любить)
     for (int i = 0; i < 8; i++)
         for (int j = 0; j < 8; j++)
             matrix[i][j] = ' ';
@@ -218,7 +217,6 @@ void decode2() {
         if (!fin.read((char*)&b1.byte, 1)) break;
         if (!fin.read((char*)&b2.byte, 1)) break;
 
-        // Перевірка на всяк випадок (щоб не вийти за межі матриці)
         if (b1.bits.row < 8 && b2.bits.col < 8) {
             unsigned char ch = (b2.bits.high << 4) | b1.bits.low;
             matrix[b1.bits.row][b2.bits.col] = (char)ch;

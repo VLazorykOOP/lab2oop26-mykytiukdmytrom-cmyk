@@ -24,7 +24,7 @@ using namespace std;
 
 // Парність
 int parity(int a, int b) {
-    return (a ^ b) & 1;
+    return (a ^ b) & 1;    //   0111 0011  --> 0100
 }
 
 // ШИФРУВАННЯ
@@ -55,7 +55,7 @@ void encode() {
             unsigned char byte1 = 0;
             byte1 |= (row & 0b111) << 5;
             byte1 |= (low & 0b1111) << 1;
-            byte1 |= parity(row, low);
+            byte1 |= parity(row, low);              ///   0101 0011
 
             unsigned char byte2 = 0;
             byte2 |= (high & 0b1111) << 4;

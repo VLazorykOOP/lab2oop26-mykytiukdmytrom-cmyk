@@ -24,7 +24,7 @@ using namespace std;
 
 // Парність
 int parity(int a, int b) {
-    return (a ^ b) & 1;
+    return !((a ^ b) & 1);
 }
 
 // ШИФРУВАННЯ
@@ -148,7 +148,7 @@ union Byte2 {
 
 // Функція розрахунку парності (простий XOR)
 int get_parity(int a, int b) {
-    return (a ^ b) & 1;
+    return ((a ^ b) & 1) ^ 1;
 }
 
 // ----------- ШИФРУВАННЯ -----------
@@ -234,7 +234,7 @@ void decode2() {
     }
 }
 
-
+// меню завдань
 #include <windows.h>
 
 int main() {
